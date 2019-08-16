@@ -16,6 +16,7 @@ namespace Naga
             {
                 using (var wc = new WebClient())
                 {
+                    wc.UseDefaultCredentials = true;
                     byte[] data = wc.DownloadData(FullUrl);
 #if DEBUG
                     Console.WriteLine("[*] Downloaded {0} bytes", data.Length);
