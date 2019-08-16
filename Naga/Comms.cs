@@ -16,7 +16,8 @@ namespace Naga
             {
                 using (var wc = new WebClient())
                 {
-                    wc.UseDefaultCredentials = true;
+                    wc.Proxy = WebRequest.GetSystemWebProxy();
+                    wc.Proxy.Credentials = CredentialCache.DefaultCredentials;
                     byte[] data = wc.DownloadData(FullUrl);
 #if DEBUG
                     Console.WriteLine("[*] Downloaded {0} bytes", data.Length);
@@ -34,6 +35,8 @@ namespace Naga
             return Retry.Do(() =>
             {
                 var wr = WebRequest.Create(FullUrl);
+                wr.Proxy = WebRequest.GetSystemWebProxy();
+                wr.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 wr.Method = "POST";
                 if (payload.Length > 0)
                 {
