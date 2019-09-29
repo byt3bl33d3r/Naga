@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Threading;
 using System.IO;
@@ -9,6 +10,19 @@ namespace Naga
 {
     class Utils
     {
+
+        public static byte[] Hex2Binary(string hex)
+        {
+            var chars = hex.ToCharArray();
+            var bytes = new List<byte>();
+            for (int index = 0; index < chars.Length; index += 2)
+            {
+                var chunk = new string(chars, index, 2);
+                bytes.Add(byte.Parse(chunk, NumberStyles.AllowHexSpecifier));
+            }
+            return bytes.ToArray();
+        }
+
         public static string GetDllName(string name)
         {
             var dllName = name + ".dll";

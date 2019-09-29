@@ -9,17 +9,17 @@ namespace Naga
 {
     class Crypto
     {
-
-        public static byte[] ECDHKeyExchange(Uri URL, string Endpoint = "")
+        public static byte[] ECDHKeyExchange(Uri URL, byte[] PSK, string Endpoint = "")
         {
             byte[] key = default(byte[]);
 
             using (ECDiffieHellmanCng AsymAlgo = new ECDiffieHellmanCng())
             {
-                var publicKey = AsymAlgo.PublicKey.ToXmlString();
-                byte[] r = Comms.HttpPost(URL, Endpoint, Encoding.UTF8.GetBytes(publicKey));
+                byte[] encryptedPublicKey = Encrypt(PSK, Encoding.UTF8.GetBytes(AsymAlgo.PublicKey.ToXmlString()));
+                byte[] r = Comms.HttpPost(URL, Endpoint, encryptedPublicKey);
 
-                ECDiffieHellmanCngPublicKey peerPublicKey = ECDiffieHellmanCngPublicKey.FromXmlString(Encoding.UTF8.GetString(r));
+                string decryptedPeerPublicKey = Encoding.UTF8.GetString(Decrypt(PSK, r));
+                ECDiffieHellmanCngPublicKey peerPublicKey = ECDiffieHellmanCngPublicKey.FromXmlString(decryptedPeerPublicKey);
                 key = AsymAlgo.DeriveKeyMaterial(peerPublicKey);
             }
             return key;

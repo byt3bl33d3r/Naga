@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>fbb9181b-8651-48bc-b2d3-14951a0a5a4f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>NagaCode</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)St.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Comms.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Crypto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ZipStorer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Resources\Boo.Lang.Compiler.dll" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\Boo.Lang.dll" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\Boo.Lang.Extensions.dll" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\Boo.Lang.Parser.dll" />
+  </ItemGroup>
+</Project>

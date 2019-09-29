@@ -1,25 +1,58 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naga", "Naga\Naga.csproj", "{E3056D88-08A3-483A-90AB-BF07683F9ED0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NagaExe", "Naga\NagaExe.csproj", "{99428732-4979-47B6-A323-0BB7D6D07C95}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "NagaCode", "NagaCode\NagaCode.shproj", "{FBB9181B-8651-48BC-B2D3-14951A0A5A4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NagaDll", "NagaDll\NagaDll.csproj", "{A2C9488F-6067-4B17-8C6F-2D464E65C535}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		NagaCode\NagaCode.projitems*{99428732-4979-47b6-a323-0bb7d6d07c95}*SharedItemsImports = 4
+		NagaCode\NagaCode.projitems*{a2c9488f-6067-4b17-8c6f-2d464e65c535}*SharedItemsImports = 4
+		NagaCode\NagaCode.projitems*{fbb9181b-8651-48bc-b2d3-14951a0a5a4f}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E3056D88-08A3-483A-90AB-BF07683F9ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3056D88-08A3-483A-90AB-BF07683F9ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3056D88-08A3-483A-90AB-BF07683F9ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3056D88-08A3-483A-90AB-BF07683F9ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Debug|x64.Build.0 = Debug|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Debug|x86.Build.0 = Debug|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Release|x64.ActiveCfg = Release|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Release|x64.Build.0 = Release|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Release|x86.ActiveCfg = Release|Any CPU
+		{99428732-4979-47B6-A323-0BB7D6D07C95}.Release|x86.Build.0 = Release|Any CPU
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Debug|x64.ActiveCfg = Debug|x64
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Debug|x64.Build.0 = Debug|x64
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Debug|x86.Build.0 = Debug|Any CPU
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Release|x64.ActiveCfg = Release|x64
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Release|x64.Build.0 = Release|x64
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Release|x86.ActiveCfg = Release|x86
+		{A2C9488F-6067-4B17-8C6F-2D464E65C535}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {07778F5B-AF3D-4E78-B679-79C91DEAF407}
+		SolutionGuid = {CC290689-2100-4D3A-8D7F-19027320AB7E}
 	EndGlobalSection
 EndGlobal
