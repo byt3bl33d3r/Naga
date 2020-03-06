@@ -88,15 +88,25 @@ namespace Naga
         {
             Console.WriteLine("\n[*] Compiling Stage Code");
 
-            BooCompiler compiler = new BooCompiler();
-            compiler.Parameters.Input.Add(new StringInput("Stage.boo", source));
-            compiler.Parameters.Pipeline = new CompileToMemory();
-            compiler.Parameters.Ducky = true;
-            compiler.Parameters.References.Add(compiler.Parameters.LoadAssembly("System.Web.Extensions", true));
+            CompilerParameters parameters = new CompilerParameters(false);
+            parameters.Input.Add(new StringInput("Stage.boo", source));
+            parameters.Pipeline = new CompileToMemory();
+            parameters.Ducky = true;
+
+            parameters.AddAssembly(Assembly.LoadWithPartialName("Boo.Lang"));
+            parameters.AddAssembly(Assembly.LoadWithPartialName("Boo.Lang.Extensions"));
+            parameters.AddAssembly(Assembly.LoadWithPartialName("Boo.Lang.Parser"));
+            parameters.AddAssembly(Assembly.LoadWithPartialName("Boo.Lang.Compiler"));
+            parameters.AddAssembly(Assembly.LoadWithPartialName("mscorlib"));
+            parameters.AddAssembly(Assembly.LoadWithPartialName("System"));
+            parameters.AddAssembly(Assembly.LoadWithPartialName("System.Core"));
+            parameters.AddAssembly(Assembly.LoadWithPartialName("System.Web.Extensions"));
             //Console.WriteLine(compiler.Parameters.LibPaths);
             //compiler.Parameters.LoadAssembly("System");
 
+            BooCompiler compiler = new BooCompiler(parameters);
             CompilerContext context = compiler.Run();
+
             //Note that the following code might throw an error if the Boo script had bugs.
             //Poke context.Errors to make sure.
             if (context.GeneratedAssembly != null)
